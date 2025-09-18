@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Repository Manager</h1>
+            <p>Manage your GitHub repositories with ease</p>
+        </header>
+
+        <div class="auth-section" id="authSection">
+            <h2>GitHub Authentication</h2>
+            <div class="auth-form">
+                <input type="text" id="githubToken" placeholder="Enter your GitHub Personal Access Token" />
+                <button onclick="authenticate()">Connect to GitHub</button>
+            </div>
+            <div class="auth-help">
+                <p>
+                    <strong>How to get a GitHub token:</strong><br>
+                    1. Go to GitHub Settings → Developer settings → Personal access tokens<br>
+                    2. Generate new token with 'repo' and 'delete_repo' permissions<br>
+                    3. Copy and paste the token above
+                </p>
+            </div>
+        </div>
+
+        <div class="main-content" id="mainContent" style="display: none;">
+            <div class="controls">
+                <button onclick="loadRepositories()" class="refresh-btn">🔄 Refresh Repositories</button>
+                <div class="user-info" id="userInfo"></div>
+            </div>
+
+            <div class="repositories" id="repositories">
+                <!-- Repositories will be loaded here -->
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading repositories...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
